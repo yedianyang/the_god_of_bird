@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<!--
+        Create by yedianyang.
+        Using AR.js
+        Thanks to Nicolò Carpignoli's selfless contrubution on WebAR development.
+    -->
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>GeoAR.js demo</title>
+
+    <!--
+        Import AFRAME 
+    -->
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+</head>
+
+<body style='margin: 0; overflow: hidden;'>
+    <a-scene vr-mode-ui="enabled: false" gps-camera-debug embedded
+        arjs='sourceType: webcam; sourceWidt`h:4032; sourceHeight:3024; displayWidth: 1440; displayHeight: 1080; debugUIEnabled: false;'>
+        <!--Add the entity model to the scene-->
+        <!--The scale attribute is used because that model is pretty big and the custom rotation will make the model ‘look’ towards the user. 
+            The animation-mixer attribute tells the model to use its built-in animation.-->
+        <a-entity gltf-model="./assets/magnemite/scene.gltf" rotation="0 180 0" scale="0.3 0.3 0.3"
+            gps-entity-place="longitude: 121.5402463; latitude: 31.2332699;" animation-mixer /> 
+        <a-camera gps-camera rotation-reader></a-camera>
+        <!--Only alow one in per scene-->
+    </a-scene>
+</body>
