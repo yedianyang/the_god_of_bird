@@ -24,7 +24,7 @@ var models = [
         url: './assets/minifigure/minifigure.gltf',
         position: "0 0 -10",
         scale: '200 200 200',
-        info: 'migi figure, Lv. 100, HP 100/100',
+        info: 'Migifigure, Lv. 100, HP 100/100',
         rotation: '0 180 0',
     },
     {
@@ -76,18 +76,22 @@ function renderPlaces(places) {
         let longitude = place.location.lng;
 
         let model = document.createElement('a-entity');
-        model.setAttribute('gps-projected-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-
+        model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+        
         setModel(models[modelIndex], model);
 
 
         model.setAttribute('animation-mixer', '');
 
         document.querySelector('button[data-action="change"]').addEventListener('click', function () {
-            var entity = document.querySelector('[gps-projected-entity-place]');
+            var entity = document.querySelector('[gps-entity-place]');
             modelIndex++;
             var newIndex = modelIndex % models.length;
             setModel(models[newIndex], entity);
+
+            let distanceMsg = document.querySelector('[gps-entity-place]').getAttribute('distanceMsg');
+            document.querySelector("#distance").innerHTML = distanceMsg;
+
         });
 
         scene.appendChild(model);
