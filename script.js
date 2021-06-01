@@ -65,7 +65,7 @@ var setModel = function (model, entity) {
     const div = document.querySelector('.instructions');
     const distanceMsg = document.querySelector('[gps-entity-place]').getAttribute('distanceMsg');
     console.log(distanceMsg);
-    div.innerText = model.info + "    " + distanceMsg;
+    div.innerText = distanceMsg;
 
 };
 
