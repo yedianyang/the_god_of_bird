@@ -22,10 +22,9 @@ function staticLoadPlaces() {
 var models = [
     {
         url: './assets/minifigure/minifigure.gltf',
-        position: "0 0 -10",
-        scale: '200 200 200',
+        scale: '100 100 100',
         info: 'Migifigure, Lv. 100, HP 100/100',
-        rotation: '0 180 0',
+        rotation: '0 0 0',
     },
     {
         url: './assets/magnemite/scene.gltf',
@@ -64,7 +63,9 @@ var setModel = function (model, entity) {
     entity.setAttribute('gltf-model', model.url);
 
     const div = document.querySelector('.instructions');
-    div.innerText = model.info;
+    const distanceMsg = document.querySelector('[gps-entity-place]').getAttribute('distanceMsg');
+    console.log(distanceMsg);
+    div.innerText = model.info + "    " + distanceMsg;
 
 };
 
