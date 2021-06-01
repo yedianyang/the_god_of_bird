@@ -12,14 +12,20 @@ function staticLoadPlaces() {
         {
             name: 'Pokèmon',
             location: {
-                lat: 31.2343017,
-                lng: 121.4966702,
+                lat: 31.2345439,
+                lng: 121.4969498,
             },
         },
     ];
 }
 
 var models = [
+    {
+        url: './assets/minifigure/minifigure.gltf',
+        scale: '1 1 1',
+        info: 'migi figure, Lv. 100, HP 100/100',
+        rotation: '0 180 0',
+    },
     {
         url: './assets/magnemite/scene.gltf',
         scale: '0.5 0.5 0.5',
