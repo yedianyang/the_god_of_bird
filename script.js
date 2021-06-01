@@ -63,9 +63,7 @@ var setModel = function (model, entity) {
     entity.setAttribute('gltf-model', model.url);
 
     const div = document.querySelector('.instructions');
-    const distanceMsg = document.querySelector('[gps-entity-place]').getAttribute('distanceMsg');
-    console.log(distanceMsg);
-    div.innerText = distanceMsg;
+    div.innerText = model.info;
 
 };
 
