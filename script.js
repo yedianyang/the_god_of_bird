@@ -77,7 +77,7 @@ function renderPlaces(places) {
 
         let model = document.createElement('a-entity');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-        
+
         setModel(models[modelIndex], model);
 
 
@@ -91,7 +91,7 @@ function renderPlaces(places) {
 
             let distanceMsg = document.querySelector('[gps-entity-place]').getAttribute('distanceMsg');
             document.querySelector("#distance").innerHTML = distanceMsg;
-
+            console.log(distanceMsg);
         });
 
         scene.appendChild(model);
