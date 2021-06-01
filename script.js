@@ -22,7 +22,7 @@ function staticLoadPlaces() {
 var models = [
     {
         url: './assets/minifigure/minifigure.gltf',
-        scale: '20 20 20',
+        scale: '200 200 200',
         info: 'migi figure, Lv. 100, HP 100/100',
         rotation: '0 180 0',
     },
@@ -40,7 +40,7 @@ var models = [
     },
     {
         url: './assets/dragonite/scene.gltf',
-        scale: '0.08 0.08 0.08',
+        scale: '1 1 1',
         rotation: '0 180 0',
         info: 'Dragonite, Lv. 99, HP 150/150',
     },
