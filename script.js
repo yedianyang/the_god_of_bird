@@ -22,7 +22,7 @@ function staticLoadPlaces() {
 var models = [
     {
         url: './assets/minifigure/minifigure.gltf',
-        position="0 0 -10",
+        positio: "0 0 -10",
         scale: '200 200 200',
         info: 'migi figure, Lv. 100, HP 100/100',
         rotation: '0 180 0',
