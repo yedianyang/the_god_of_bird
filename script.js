@@ -3,6 +3,17 @@ window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
     button.innerText = ' ? ';
 
+    const camera = document.querySelector('a-camera');
+    window.addEventListener("gps-camera-update-position", e => {
+        if (firstLoc) {
+            firstLoc = false;
+            alert(`Got GPS: you are at: ${e.detail.position.longitude} ${e.detail.position.latitude}`);
+            setPos(e.detail.position.longitude, e.detail.position.latitude);
+        }
+    });
+
+
+
     let places = staticLoadPlaces();
     renderPlaces(places);
 };
