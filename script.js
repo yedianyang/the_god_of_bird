@@ -12,8 +12,8 @@ function staticLoadPlaces() {
         {
             name: 'Pokèmon',
             location: {
-                lat: 31.233449,
-                lng: 121.540260,
+                lat: 31.2343017,
+                lng: 121.4966702,
             },
         },
     ];
@@ -58,6 +58,7 @@ var setModel = function (model, entity) {
 
     const div = document.querySelector('.instructions');
     div.innerText = model.info;
+
 };
 
 function renderPlaces(places) {
@@ -71,6 +72,7 @@ function renderPlaces(places) {
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
 
         setModel(models[modelIndex], model);
+
 
         model.setAttribute('animation-mixer', '');
 
