@@ -1,59 +1,27 @@
 <!DOCTYPE html>
 <html>
-<!--
-        Create by yedianyang.
-        Using AR.js
-        Thanks to Nicolò Carpignoli's selfless contrubution on WebAR development.
-    -->
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Birds</title>
-
-    <!--
-        Import AFRAME 
-   
-    <script src="./libraries/aframe.min.js"></script>
-    <script src="./libraries/aframe-look-at-component.min.js"></script>
-    <script src="./libraries/aframe-ar-nft.js"></script>
- -->
+    <title>GeoAR.js demo</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-    <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+  </head>
 
-
-
-
-
-    <script src="./script.js"></script>
-    <link rel="stylesheet" type="text/css" href="./style.css" />
-
-</head>
-
-
-<body style='margin: 0; overflow: hidden;'>
-    <div class="centered instructions"></div>
-
-    <!--<a-scene vr-mode-ui="enabled: false" embedded
-        arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>-->
-    <a-scene stats vr-mode-ui="enabled: false" embedded
-        arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;">
-        <a-camera gps-camera rotation-reader></a-camera>
-
-        <!--Add the entity model to the scene-->
-        <!--The scale attribute is used because that model is pretty big and the custom rotation will make the model ‘look’ towards the user. 
-            The animation-mixer attribute tells the model to use its built-in animation.-->
-        <!--<a-entity gltf-model="./assets/magnemite/scene.gltf" rotation="0 180 0" scale="0.1 0.1 0.1"
-            gps-entity-place="longitude: 121.5402463; latitude: 31.2332699;" animation-mixer /> 
-        
-        -->
-        <!--Only alow one in per scene-->
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene
+      vr-mode-ui="enabled: false"
+      embedded
+      arjs="sourceType: webcam; debugUIEnabled: false;"
+    >
+      <a-text
+        value="This content will always face you."
+        look-at="[gps-camera]"
+        scale="120 120 120"
+        gps-entity-place="latitude: 31.2345439; longitude: 121.4969498;"
+      ></a-text>
+      <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
-
-    <div class="centered">
-        <button data-action="change"></button>
-    </div>
-
-</body>
+  </body>
+</html>
